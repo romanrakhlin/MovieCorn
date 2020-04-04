@@ -1,24 +1,532 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wLW-h9-wS4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Results-->
+        <scene sceneID="Qk1-ft-L3R">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="IUY-s9-U5T" customClass="MoviesViewController" customModule="MovieCorn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cld-ws-kLI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Un-5u-7Ad">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="i3G-u7-cEi" customClass="MovieCell" customModule="MovieCorn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i3G-u7-cEi" id="7Yo-Ct-hVr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uUh-dA-IX6">
+                                                    <rect key="frame" x="40" y="21" width="334" height="108"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LUA-N2-No7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="108"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="Pfp-Bo-VbO"/>
+                                                                <constraint firstAttribute="height" constant="100" id="sVl-F6-yra"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8C6-gO-72p">
+                                                            <rect key="frame" x="120" y="0.0" width="214" height="108"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzZ-Xo-USq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="214" height="29.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-xH-GuY">
+                                                                    <rect key="frame" x="0.0" y="39.5" width="214" height="29"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiL-f0-DGu">
+                                                                    <rect key="frame" x="0.0" y="78.5" width="214" height="29.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="IiL-f0-DGu" firstAttribute="leading" secondItem="8C6-gO-72p" secondAttribute="leading" id="AU1-ic-VYs"/>
+                                                                <constraint firstItem="MzZ-Xo-USq" firstAttribute="leading" secondItem="8C6-gO-72p" secondAttribute="leading" id="cQM-mt-KN5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="IiL-f0-DGu" secondAttribute="trailing" id="ito-I4-FH5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="x3J-xH-GuY" secondAttribute="trailing" id="ktd-zU-gUX"/>
+                                                                <constraint firstItem="x3J-xH-GuY" firstAttribute="leading" secondItem="8C6-gO-72p" secondAttribute="leading" id="pus-iF-zpk"/>
+                                                                <constraint firstAttribute="trailing" secondItem="MzZ-Xo-USq" secondAttribute="trailing" id="uza-RP-m5m"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uUh-dA-IX6" firstAttribute="leading" secondItem="7Yo-Ct-hVr" secondAttribute="leadingMargin" constant="20" id="0ot-Vh-J0P"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uUh-dA-IX6" secondAttribute="trailing" constant="20" id="CSf-qE-5oV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uUh-dA-IX6" secondAttribute="bottom" constant="10" id="MUa-tN-dN5"/>
+                                                <constraint firstItem="uUh-dA-IX6" firstAttribute="top" secondItem="7Yo-Ct-hVr" secondAttribute="topMargin" constant="10" id="lfr-iK-c63"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="posterView" destination="LUA-N2-No7" id="kDh-lG-6AR"/>
+                                            <outlet property="titleLabel" destination="MzZ-Xo-USq" id="4pf-Mu-xhR"/>
+                                            <outlet property="typeLabel" destination="IiL-f0-DGu" id="2HE-sB-Nji"/>
+                                            <outlet property="yearLabel" destination="x3J-xH-GuY" id="tkt-Tz-xam"/>
+                                            <segue destination="4DA-HZ-2SB" kind="show" identifier="segue" id="bsj-3q-utU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IUY-s9-U5T" id="Kbg-wi-q71"/>
+                                    <outlet property="delegate" destination="IUY-s9-U5T" id="QJn-fz-xe3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9I0-MB-9dU" firstAttribute="trailing" secondItem="6Un-5u-7Ad" secondAttribute="trailing" id="Idu-xn-zfX"/>
+                            <constraint firstItem="9I0-MB-9dU" firstAttribute="bottom" secondItem="6Un-5u-7Ad" secondAttribute="bottom" id="VdO-Hg-6Kb"/>
+                            <constraint firstItem="6Un-5u-7Ad" firstAttribute="top" secondItem="9I0-MB-9dU" secondAttribute="top" id="XtH-eH-2uu"/>
+                            <constraint firstItem="6Un-5u-7Ad" firstAttribute="leading" secondItem="9I0-MB-9dU" secondAttribute="leading" id="z2a-PQ-ONe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9I0-MB-9dU"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Results" id="uee-v4-Xu8"/>
+                    <connections>
+                        <outlet property="tableView" destination="6Un-5u-7Ad" id="dd7-8t-rcy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tlS-TX-ya4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1402.8985507246377" y="-605.35714285714278"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="epJ-kX-iVJ">
+            <objects>
+                <tableViewController id="4DA-HZ-2SB" customClass="DetailViewController" customModule="MovieCorn" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zgD-p7-dAt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="nUW-jH-y83">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="zIG-fh-CGf">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zIG-fh-CGf" id="Mbu-AQ-GwJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-iW-vtI">
+                                                    <rect key="frame" x="145.5" y="21" width="125" height="125"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="125" id="S4y-CL-hex"/>
+                                                        <constraint firstAttribute="height" constant="125" id="VUB-OK-fkl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-jn-TmX">
+                                                    <rect key="frame" x="20" y="161" width="374" height="25.5"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="AXc-jn-TmX" secondAttribute="trailing" constant="20" id="8rc-Fg-yJO"/>
+                                                <constraint firstItem="GaZ-iW-vtI" firstAttribute="centerX" secondItem="Mbu-AQ-GwJ" secondAttribute="centerX" constant="1" id="AxH-4q-rhC"/>
+                                                <constraint firstItem="GaZ-iW-vtI" firstAttribute="top" secondItem="Mbu-AQ-GwJ" secondAttribute="topMargin" constant="10" id="Ohr-tS-YOQ"/>
+                                                <constraint firstItem="AXc-jn-TmX" firstAttribute="leading" secondItem="Mbu-AQ-GwJ" secondAttribute="leading" constant="20" id="nWe-lr-6Yu"/>
+                                                <constraint firstItem="AXc-jn-TmX" firstAttribute="top" secondItem="GaZ-iW-vtI" secondAttribute="bottom" constant="15" id="nXC-Vd-cXf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="About" id="D9u-gW-ADP">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="325" id="4qP-m0-9ov">
+                                        <rect key="frame" x="0.0" y="274" width="414" height="325"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4qP-m0-9ov" id="YYe-ZS-kJJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="325"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-d6-4oS">
+                                                    <rect key="frame" x="30" y="31" width="354" height="273"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fcc-GU-euW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8t-hn-VLe">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50.5" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-0b-tIF">
+                                                                    <rect key="frame" x="60.5" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Sjw-qx-gRo">
+                                                            <rect key="frame" x="0.0" y="31.5" width="70.5" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJN-qB-xbi">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="51.5" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTJ-EI-fHH">
+                                                                    <rect key="frame" x="61.5" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Xd-Rf-jNO">
+                                                            <rect key="frame" x="0.0" y="63" width="109" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iv9-dN-1EX">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTm-7v-OLj">
+                                                                    <rect key="frame" x="100" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IAO-E5-tm3">
+                                                            <rect key="frame" x="0.0" y="94.5" width="101" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runtime: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-HH-hBt">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="82" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyB-pQ-x4v">
+                                                                    <rect key="frame" x="92" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XHm-9q-rkq">
+                                                            <rect key="frame" x="0.0" y="126" width="82" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bg-TH-XDO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="63" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hy-zk-Ybs">
+                                                                    <rect key="frame" x="73" y="0.0" width="9" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-kw-MmD">
+                                                            <rect key="frame" x="0.0" y="157" width="101.5" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-z4-OWD">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-ta-pET">
+                                                                    <rect key="frame" x="92.5" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9fD-Mh-ieh">
+                                                            <rect key="frame" x="0.0" y="188.5" width="111.5" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9a-09-weL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="92.5" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-eY-Rta">
+                                                                    <rect key="frame" x="102.5" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ba-gy-aKk">
+                                                            <rect key="frame" x="0.0" y="220" width="100" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsu-vI-eGn">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZa-W3-saS">
+                                                                    <rect key="frame" x="91" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mQh-gq-CeC">
+                                                            <rect key="frame" x="0.0" y="251.5" width="115" height="21.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BoxOffice: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkR-Uu-aae">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iej-tH-ZiO">
+                                                                    <rect key="frame" x="106" y="0.0" width="9" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yuc-d6-4oS" firstAttribute="leading" secondItem="YYe-ZS-kJJ" secondAttribute="leadingMargin" constant="10" id="JWC-QI-BtJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yuc-d6-4oS" secondAttribute="trailing" constant="10" id="epe-i5-WIe"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yuc-d6-4oS" secondAttribute="bottom" constant="10" id="fro-Ar-GRl"/>
+                                                <constraint firstItem="yuc-d6-4oS" firstAttribute="top" secondItem="YYe-ZS-kJJ" secondAttribute="topMargin" constant="20" id="oBk-wG-lpN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Ratings" id="Gnc-IR-8hB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="125" id="cGq-Lo-rtu">
+                                        <rect key="frame" x="0.0" y="655" width="414" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cGq-Lo-rtu" id="3jW-yQ-aBS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R23-XK-F6w">
+                                                    <rect key="frame" x="40" y="21" width="334" height="83"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kbc-a8-Gug">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metascore: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xd-84-GFy">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="99.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-fd-2Mv">
+                                                                    <rect key="frame" x="119.5" y="0.0" width="9" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-xb-22R">
+                                                            <rect key="frame" x="0.0" y="31" width="135.5" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imdbRating: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyC-eS-G2h">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vx-Uz-rkY">
+                                                                    <rect key="frame" x="126.5" y="0.0" width="9" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Xd-8D-Vc8">
+                                                            <rect key="frame" x="0.0" y="62" width="135.5" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imdbVotes: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZI-cx-bK2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="98.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYd-UW-vo0">
+                                                                    <rect key="frame" x="126.5" y="0.0" width="9" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="R23-XK-F6w" secondAttribute="bottom" constant="10" id="OhA-FW-I7n"/>
+                                                <constraint firstItem="R23-XK-F6w" firstAttribute="leading" secondItem="3jW-yQ-aBS" secondAttribute="leadingMargin" constant="20" id="VPo-wG-uSb"/>
+                                                <constraint firstItem="R23-XK-F6w" firstAttribute="top" secondItem="3jW-yQ-aBS" secondAttribute="topMargin" constant="10" id="Wim-L5-bCB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R23-XK-F6w" secondAttribute="trailing" constant="20" id="a4L-l8-80x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="4DA-HZ-2SB" id="WPf-Q4-70A"/>
+                            <outlet property="delegate" destination="4DA-HZ-2SB" id="tIe-JF-a0U"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About" id="o2E-SQ-8zD"/>
+                    <connections>
+                        <outlet property="boxofficeLabel" destination="iej-tH-ZiO" id="cOS-j8-7qb"/>
+                        <outlet property="countryLabel" destination="DZa-W3-saS" id="9Gu-0b-S0H"/>
+                        <outlet property="directorLabel" destination="bVW-ta-pET" id="EAn-Id-jkg"/>
+                        <outlet property="genreLabel" destination="7Hy-zk-Ybs" id="RgM-DY-dL8"/>
+                        <outlet property="imdbLabel" destination="3vx-Uz-rkY" id="g0X-Yu-mNz"/>
+                        <outlet property="imdbVotes" destination="RYd-UW-vo0" id="LVW-EF-3EU"/>
+                        <outlet property="languageLabel" destination="q76-eY-Rta" id="82E-6x-1mm"/>
+                        <outlet property="metascoreLabel" destination="FoQ-fd-2Mv" id="Zx7-wi-geq"/>
+                        <outlet property="posterView" destination="GaZ-iW-vtI" id="hKn-g8-uRY"/>
+                        <outlet property="rateLabel" destination="bTJ-EI-fHH" id="ACg-yF-YuM"/>
+                        <outlet property="releasedLabel" destination="iTm-7v-OLj" id="vCz-df-cdT"/>
+                        <outlet property="runtimeLabel" destination="EyB-pQ-x4v" id="2XO-83-jbV"/>
+                        <outlet property="titleLabel" destination="AXc-jn-TmX" id="MC8-xg-Dqa"/>
+                        <outlet property="yearLabel" destination="Trq-0b-tIF" id="yYj-Cn-4Qp"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mco-zK-njE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2180" y="-606"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mXK-AC-a2b">
+            <objects>
+                <navigationController id="wLW-h9-wS4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4cw-kx-ZLD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yC7-P3-QPH" kind="relationship" relationship="rootViewController" id="CIM-Kd-LGE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2H-sP-L6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="-604"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Vzd-9w-nnu">
+            <objects>
+                <viewController id="yC7-P3-QPH" customClass="SearchViewController" customModule="MovieCorn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6zj-jB-aTB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-8f-a2p">
+                                <rect key="frame" x="132" y="225" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="uF7-CN-cBQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="xth-M0-Ew5"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yp4-xf-FNA">
+                                <rect key="frame" x="20" y="395" width="374" height="106"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MOVIE/SERIES" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="OtT-k6-bfp">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxb-4t-Szv">
+                                        <rect key="frame" x="0.0" y="60" width="374" height="46"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="24"/>
+                                        <state key="normal" title="SEARCH">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="searchButton:" destination="yC7-P3-QPH" eventType="touchUpInside" id="nx2-Ec-nYq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Kxb-4t-Szv" firstAttribute="leading" secondItem="yp4-xf-FNA" secondAttribute="leading" id="DX3-kZ-ziW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kxb-4t-Szv" secondAttribute="trailing" id="Wei-FX-fPy"/>
+                                    <constraint firstItem="OtT-k6-bfp" firstAttribute="leading" secondItem="yp4-xf-FNA" secondAttribute="leading" id="t6U-nq-Aby"/>
+                                    <constraint firstAttribute="trailing" secondItem="OtT-k6-bfp" secondAttribute="trailing" id="yhu-UV-EfR"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yp4-xf-FNA" firstAttribute="top" secondItem="OD9-8f-a2p" secondAttribute="bottom" constant="20" id="0RA-ms-upb"/>
+                            <constraint firstItem="yp4-xf-FNA" firstAttribute="centerX" secondItem="6zj-jB-aTB" secondAttribute="centerX" id="4Sx-Qj-rYZ"/>
+                            <constraint firstItem="yp4-xf-FNA" firstAttribute="centerY" secondItem="6zj-jB-aTB" secondAttribute="centerY" id="IDN-kd-QJ5"/>
+                            <constraint firstItem="yp4-xf-FNA" firstAttribute="leading" secondItem="5lZ-xp-ehs" secondAttribute="leading" constant="20" id="Ioo-t8-3hb"/>
+                            <constraint firstItem="5lZ-xp-ehs" firstAttribute="trailing" secondItem="yp4-xf-FNA" secondAttribute="trailing" constant="20" id="m9Y-Dd-qxv"/>
+                            <constraint firstItem="OD9-8f-a2p" firstAttribute="centerX" secondItem="6zj-jB-aTB" secondAttribute="centerX" id="yxt-IJ-3Vu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5lZ-xp-ehs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1TL-BV-el7"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="OtT-k6-bfp" id="RX7-6y-eG7"/>
+                        <segue destination="IUY-s9-U5T" kind="show" identifier="searchSegue" id="FVs-rR-khW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGy-K2-6NM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605.79710144927537" y="-603.34821428571422"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unknown" width="2000" height="2000"/>
+        <image name="logo" width="1727" height="2209"/>
+    </resources>
 </document>
