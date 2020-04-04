@@ -1,3 +1,7 @@
 # MovieCorn
 
-![alt-text-1](1.gif "title-1") ![alt-text-2](2.gif "title-2")
+<p float="left">
+  <img src="/1.gif" width="100" />
+  <img src="/2.gif" width="100" /> 
+  <img src="/3.gif" width="100" />
+</p>
